@@ -35,7 +35,7 @@ btnSimulationAgain.onclick = function click(){
 }
 
 function startFetch(object){
-    fetch('http://api.mathjs.org/v4/', object)
+    fetch('https://api.mathjs.org/v4/', object)
     .then(toObject)
     .then(buildHtml)
     .catch(error)  
