@@ -11,16 +11,19 @@ body{
     background-color: rgb(10, 10, 10);
 }
 
-.firstScreen{
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.firstScreen, .secondScreen, .loadingScreen{
     background-color: rgba(158, 155, 155, 0.5);
     border-radius: 8px;
     padding: 40px;
     width: 90vw;
     max-width: 400px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .header{
@@ -54,6 +57,7 @@ body{
 }
 
 .form div select, .form div input{
+    caret-color: #00E65C;
     height: 30px;
     border-radius: 3px;
     border: none;
@@ -62,12 +66,10 @@ body{
     font-weight: 600;
 }
 
-.btnSimulation{
+.btnSimulation, .btnSimulationAgain{
     display: block;
     margin: 20px auto;
-    width: 60vw;
-    max-width: 180px;
-    height: 30px;
+    padding: 5px 40px;
     border-radius: 8px;
     border: 1.5px solid #00E65C;
     background: none;
@@ -75,4 +77,61 @@ body{
     color: #00E65C;
     cursor: pointer;
     align-self: center;
+}
+
+.btnSimulation:hover, .btnSimulationAgain:hover{
+    transform: scale(1.1);
+    background-color: #00E65C;
+    color: white;
+    transition: all 800ms;
+}
+
+.secondScreen p{
+    font-size: 1.3em;
+    text-align: center;
+    color: white;
+}
+
+.secondScreen p span{
+    color: #00E65C;
+}
+
+.loadingScreen > span{
+    display: block;
+}
+
+.loadingScreen > span:first-child{
+    text-align: center;
+    font-size: 2em;
+    font-weight: 600;
+    color: white;
+}
+
+.loadingScreen .loading{
+    margin: 20px auto 0px auto;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 10px solid #00E65C;
+    border-radius: 50%;
+    border-top: 10px solid transparent;
+
+    animation: loading 1000ms linear infinite;
+}
+
+.visible{
+    display: block;
+}
+
+.notVisible{
+    display: none;
+}
+
+@keyframes loading {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }

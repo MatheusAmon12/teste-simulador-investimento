@@ -4,47 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simular investimentos</title>
+    <title>Juros Compostos</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <section class="firstScreen">
-        <header class="header">
-            <h1>Simulador</h1>
-        </header>
-        <form action="#" method="post" class="form">
-            <div>
-                <label for="iname">Nome</label>
-                <input type="text" id="iname" required autofocus>
-            </div>
-
-            <div>
-                <label for="iinstallments">Mensalidade</label>
-                <input type="number" id="iinstallments" required>
-            </div>
-
-            <div>
-                <label for="irate">Taxa de juros</label>
-                <input type="number" id="irate" required step="0.1">
-            </div>
-
-            <div>
-                <label for="itime">Tempo</label>
-                <select id="itime">
-                    <option value="1">1 ano</option>
-                    <option value="2">2 anos</option>
-                    <option value="5">5 anos</option>
-                    <option value="30">30 anos</option>
-                </select>
-            </div>
-        </form>
-        <button type="submit" class="btnSimulation">
-            Simular
-        </button>
-    </section>
-
-    <section class="secondScreen">
-        
+    <section class="content">
+        <section class="firstScreen visible">
+            <header class="header">
+                <h1>Simulador</h1>
+            </header>
+            <form action="#" method="post" class="form">
+                <div>
+                    <label for="iname">Nome</label>
+                    <input type="text" id="iname" required autofocus>
+                </div>
+                <div>
+                    <label for="iinstallments">Mensalidade</label>
+                    <input type="number" id="iinstallments" required>
+                </div>
+                <div>
+                    <label for="irate">Taxa de juros</label>
+                    <input type="number" id="irate" required step="0.1">
+                </div>
+                <div>
+                    <label for="itime">Tempo</label>
+                    <select id="itime">
+                        <option value="1">1 ano</option>
+                        <option value="2">2 anos</option>
+                        <option value="5">5 anos</option>
+                        <option value="30">30 anos</option>
+                    </select>
+                </div>
+            </form>
+            <button type="submit" class="btnSimulation">
+                Simular
+            </button>
+        </section>
+        <section class="loadingScreen notVisible">
+            <span>Simulando</span>
+            <span class="loading"></span>
+        </section>
+        <section class="secondScreen notVisible">
+            <p class="resultAPI">
+                Olá Matheus, Juntando <span>R$20,00</span> todo mês, você terá <span>R$509,65</span> em <span>2 anos</span>.
+            </p>
+    
+            <button class="btnSimulationAgain">
+                Simular novamente
+            </button>
+        </section>
     </section>
     <script src="script/main.js"></script>
 </body>
